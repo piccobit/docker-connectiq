@@ -1,21 +1,12 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
-MAINTAINER Kalemena
+MAINTAINER HD Stich <hd@monkeyguru.dev>
 
 # Build-time metadata as defined at http://label-schema.org
 ARG BUILD_DATE
 ARG VCS_REF
 ARG VERSION
 ARG ADDITIONAL_PACKAGES
-LABEL org.label-schema.build-date=$BUILD_DATE \
-      org.label-schema.name="Connect IQ SDK" \
-      org.label-schema.description="Kalemena Connect IQ SDK" \
-      org.label-schema.url="private" \
-      org.label-schema.vcs-ref=$VCS_REF \
-      org.label-schema.vcs-url="https://github.com/kalemena/docker-connectiq" \
-      org.label-schema.vendor="Kalemena" \
-      org.label-schema.version=$VERSION \
-      org.label-schema.schema-version="1.0"
 
 ENV LANG C.UTF-8
 
