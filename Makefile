@@ -1,5 +1,5 @@
 
-VERSION := 3.0.12-2019-06-12-77ed6f47e
+VERSION := 3.1.6-2019-10-23-2de4665c6
 
 all: build 
 
