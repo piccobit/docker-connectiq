@@ -10,7 +10,7 @@ Installation of Garmin Tools in docker.
 
 == Installation steps
 
-=== Manualy
+=== Manually
 
 ```bash
 #### JDK 8 (not 11 !)
