@@ -13,7 +13,7 @@ ENV LANG C.UTF-8
 # Compiler tools
 RUN apt-get update -y && \
     apt-get install -qqy openjdk-8-jdk && \
-    apt-get install -qqy unzip wget git ssh tar gzip ca-certificates libusb-1.0 libpng12-0 libwebkitgtk-1.0-0 $ADDITIONAL_PACKAGES && \
+    apt-get install -qqy unzip wget git ssh tar gzip ca-certificates libusb-1.0 libpng16-0 libwebkitgtk-1.0-0 $ADDITIONAL_PACKAGES && \
     apt-get clean && \
 	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
