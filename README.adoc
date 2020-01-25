@@ -6,7 +6,8 @@ endif::[]
 
 = docker-connectiq
 
-Installation of Garmin Tools in docker.
+Installation of the Garmin Connect IQ SDK 
+in a Docker image.
 
 == Installation steps
 
