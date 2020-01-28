@@ -3,15 +3,12 @@ name: Docker Image CI
 on: [push]
 
 jobs:
-
   buildAndPush:
-
+    name: Build and push Docker image
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-
     - name: Build and push Docker image
       uses: mr-smithers-excellent/docker-build-push@v2
       with:
