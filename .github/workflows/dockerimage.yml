@@ -14,7 +14,7 @@ jobs:
     - uses: mr-smithers-excellent/docker-build-push@v2
       with:
         image: docker-connectiq
-        tag: 3.1.6-2019-10-23-2de4665c6
+        tag: 3.1.6-2019-10-23-2de4665c6-$( date '+%s' )
         registry: docker.pkg.github.com/piccobit/docker-connectiq
         name: Build the Docker image
         buildArgs: VERSION=3.1.6-2019-10-23-2de4665c6
