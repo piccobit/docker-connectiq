@@ -26,4 +26,6 @@ RUN echo "Downloading Connect IQ SDK: ${VERSION}" && \
 ENV CIQ_HOME /opt/ciq/bin
 ENV PATH ${PATH}:${CIQ_HOME}
 
+WORKDIR /app
+
 CMD [ "/bin/bash" ]
