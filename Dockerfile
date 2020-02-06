@@ -8,7 +8,7 @@ ENV CONNECT_IQ_SDK_VERSION 3.1.6-2019-10-23-2de4665c6
 # Compiler tools
 RUN apt-get update -y && \
     apt-get install -qqy openjdk-8-jdk && \
-    apt-get install -qqy unzip wget git ssh tar gzip ca-certificates libusb-1.0 libpng16-16 libwebkitgtk-1.0-0 gnupg2 && \
+    apt-get install -qqy unzip wget git ssh tar gzip ca-certificates vim libusb-1.0 libpng16-16 libwebkitgtk-1.0-0 gnupg2 && \
     apt-get clean && \
 	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
