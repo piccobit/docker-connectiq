@@ -3,7 +3,7 @@ FROM ubuntu:18.04
 MAINTAINER HD Stich <hd@monkeyguru.dev>
 
 ENV LANG C.UTF-8
-ENV CONNECT_IQ_SDK_VERSION 3.1.6-2019-10-23-2de4665c6
+ENV CONNECT_IQ_SDK_VERSION 3.1.7-2020-01-23-a3869d977
 
 # Compiler tools
 RUN apt-get update -y && \
