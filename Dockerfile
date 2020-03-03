@@ -5,6 +5,7 @@ MAINTAINER HD Stich <hd@monkeyguru.dev>
 ENV LANG C.UTF-8
 ENV CONNECT_IQ_SDK_VERSION 3.1.7-2020-01-23-a3869d977
 ENV ECLIPSE_VERSION 2019-12/R/eclipse-jee-2019-12-R-linux-gtk-x86_64.tar.gz
+ENV WEBLATE2STRINGS_VERSION=0.1.0
 
 # Compiler tools
 RUN apt-get update -y && \
@@ -17,9 +18,16 @@ RUN apt-get update -y && \
 RUN curl -LsS -o eclipse.tar.gz "https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/${ECLIPSE_VERSION}&r=1" && \
     tar -C /opt -xf eclipse.tar.gz && \
     rm -rf eclipse.tar.gz
-
+    
+# weblate2strings
+RUN curl -LsS -o weblate2strings.tar.gz "https://github.com/piccobit/weblate2strings/releases/download/v${WEBLATE2STRINGS_VERSION}/weblate2strings_${WEBLATE2STRINGS_VERSION}_Linux_x86_64.tar.gz" && \
+    mkdir -p /opt/bin && \
+    tar -C /opt/bin -xf weblate2strings.tar.gz weblate2strings && \
+    rm -rf weblate2strings.tar.gz
+    
 ENV ECLIPSE_HOME /opt/eclipse
-ENV PATH ${ECLIPSE_HOME}:${PATH}
+ENV WEBLATE2STRINGS_HOME /opt/bin
+ENV PATH ${WEBLATE2STRINGS_HOME}:${ECLIPSE_HOME}:${PATH}
 
 RUN echo "Downloading Connect IQ SDK: ${CONNECT_IQ_SDK_VERSION}" && \
     cd /opt && \
