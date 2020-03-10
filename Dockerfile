@@ -10,7 +10,7 @@ ENV WEBLATE2STRINGS_VERSION=0.2.0
 # Compiler tools
 RUN apt-get update -y && \
     apt-get install -qqy openjdk-8-jdk && \
-    apt-get install -qqy unzip curl git ssh tar gzip ca-certificates vim libusb-1.0 libpng16-16 libwebkitgtk-1.0-0 gnupg2 libgtk-3-0 && \
+    apt-get install -qqy unzip curl git ssh tar gzip ca-certificates vim libusb-1.0 libpng16-16 libwebkitgtk-1.0-0 gnupg2 libgtk-3-0 tzdata zsh && \
     apt-get clean && \
 	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
