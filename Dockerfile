@@ -3,6 +3,7 @@ FROM ubuntu:18.04
 MAINTAINER HD Stich <hd@monkeyguru.dev>
 
 ENV LANG C.UTF-8
+ENV CONNECT_IQ_SDK_URL https://developer.garmin.com/downloads/connect-iq
 ENV CONNECT_IQ_SDK_VERSION 3.1.7-2020-01-23-a3869d977
 ENV ECLIPSE_VERSION 2019-12/R/eclipse-java-2019-12-R-linux-gtk-x86_64.tar.gz
 ENV WEBLATE2STRINGS_VERSION=0.2.0
@@ -32,12 +33,16 @@ ENV PATH ${WEBLATE2STRINGS_HOME}:${ECLIPSE_HOME}:${PATH}
 
 RUN echo "Downloading Connect IQ SDK: ${CONNECT_IQ_SDK_VERSION}" && \
     cd /opt && \
-    curl -LsS -o ciq.zip https://developer.garmin.com/downloads/connect-iq/sdks/connectiq-sdk-lin-${CONNECT_IQ_SDK_VERSION}.zip && \
+    curl -LsS -o ciq.zip ${CONNECT_IQ_SDK_URL}/sdks/connectiq-sdk-lin-${CONNECT_IQ_SDK_VERSION}.zip && \
     unzip ciq.zip -d ciq && \
     rm -f ciq.zip
 
 ENV CIQ_HOME /opt/ciq/bin
 ENV PATH ${CIQ_HOME}:${PATH}
+
+RUN echo "Installing Connect IQ Eclipse Plugins" && \
+    eclipse -application org.eclipse.equinox.p2.director -repository ${CONNECT_IQ_SDK_URL}/eclipse/ -installIU connectiq.feature.ide.feature.group && \
+    eclipse -application org.eclipse.equinox.p2.director -repository ${CONNECT_IQ_SDK_URL}/eclipse/ -installIU connectiq.feature.sdk.feature.group
 
 WORKDIR /app
 
