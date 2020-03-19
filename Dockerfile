@@ -11,6 +11,9 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # Compiler tools
 RUN apt-get update -y && \
+    apt-get install --no-install-recommends -qqy  software-properties-common && \
+    add-apt-repository ppa:git-core/ppa && \
+    apt-get update -y && \
     apt-get install --no-install-recommends -qqy openjdk-8-jdk && \
     apt-get install --no-install-recommends -qqy unzip curl git ssh tar gzip ca-certificates vim libusb-1.0 libpng16-16 libwebkitgtk-1.0-0 gnupg2 libgtk-3-0 tzdata zsh && \
     apt-get clean && \
