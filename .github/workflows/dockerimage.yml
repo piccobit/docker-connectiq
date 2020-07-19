@@ -10,10 +10,11 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
     - name: Build and push Docker image
-      uses: mr-smithers-excellent/docker-build-push@v2
+      uses: mr-smithers-excellent/docker-build-push@v3
       with:
-        image: docker-connectiq-3.1.6-2019-10-23-2de4665c6
+        image: docker-connectiq-3.1.9-2020-06-24-1cc9d3a70
+        tag: latest
         registry: docker.pkg.github.com/piccobit/docker-connectiq
-        buildArgs: VERSION=3.1.6-2019-10-23-2de4665c6
-        username: $GITHUB_ACTOR
+        buildArgs: VERSION=3.1.9-2020-06-24-1cc9d3a70
+        username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }} 
