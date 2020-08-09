@@ -14,7 +14,7 @@ jobs:
       with:
         image: garmin/docker-connectiq
         tag: 3.1.9-2020-06-24-1cc9d3a70
-        registry: docker-private-push.kubernetes.zone
+        registry: docker-public-push.kubernetes.zone
         buildArgs: CONNECT_IQ_SDK_VERSION=3.1.9-2020-06-24-1cc9d3a70
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD  }} 
