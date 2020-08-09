@@ -4,7 +4,6 @@ MAINTAINER HD Stich <hd@monkeyguru.dev>
 
 ENV LANG C.UTF-8
 ENV CONNECT_IQ_SDK_URL https://developer.garmin.com/downloads/connect-iq
-ENV CONNECT_IQ_SDK_VERSION 3.1.9-2020-06-24-1cc9d3a70
 ENV ECLIPSE_VERSION 2019-12/R/eclipse-java-2019-12-R-linux-gtk-x86_64.tar.gz
 ENV WEBLATE2STRINGS_VERSION=0.2.0
 ENV DEBIAN_FRONTEND=noninteractive

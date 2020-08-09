@@ -16,6 +16,6 @@ jobs:
         tag: 3.1.9-2020-06-24-1cc9d3a70
         # registry: docker.pkg.github.com/piccobit/docker-connectiq
         registry: docker-push.kubernetes.zone
-        buildArgs: VERSION=3.1.9-2020-06-24-1cc9d3a70
+        buildArgs: CONNECT_IQ_SDK_VERSION=3.1.9-2020-06-24-1cc9d3a70
         username: ${{ secrets.DOCKER_PUSH_KUBERNETES_ZONE_USERNAME }}
         password: ${{ secrets.DOCKER_PUSH_KUBERNETES_ZONE_PASSWORD  }} 
