@@ -2,6 +2,8 @@ FROM ubuntu:18.04
 
 MAINTAINER HD Stich <hd@monkeyguru.dev>
 
+ARG CONNECT_IQ_SDK_VERSION
+
 ENV LANG C.UTF-8
 ENV CONNECT_IQ_SDK_URL https://developer.garmin.com/downloads/connect-iq
 ENV ECLIPSE_VERSION 2019-12/R/eclipse-java-2019-12-R-linux-gtk-x86_64.tar.gz
